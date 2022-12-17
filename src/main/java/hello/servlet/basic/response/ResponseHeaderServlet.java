@@ -25,8 +25,7 @@ public class ResponseHeaderServlet extends HttpServlet {
         response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
         response.setHeader("Pragma", "no-cache");
 
-        //cookie(response);
-        redirect(response);
+
         PrintWriter writer = response.getWriter();
         writer.println("ok");
     }
@@ -42,7 +41,5 @@ public class ResponseHeaderServlet extends HttpServlet {
         response.addCookie(cookie);
     }
 
-    private void redirect(HttpServletResponse response) {
-        response.sendRedirect("/basic/hello-form.html");
-    }
+
 }
